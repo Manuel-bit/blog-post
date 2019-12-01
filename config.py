@@ -2,7 +2,7 @@ class Config:
   '''
   contains configuarations for all stages of the application
   '''
-  pass
+  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://emmanuel:lilfranken@localhost/blogpost'
 class ProdConfig(Config):
   '''
   contains configuarations for production stage
