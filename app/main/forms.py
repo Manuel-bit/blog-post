@@ -9,3 +9,7 @@ class NewBlogForm(FlaskForm):
   author=StringField('Author Name',validators=[DataRequired()])
   blog=TextAreaField('My Blog',validators=[DataRequired()])
   submit=SubmitField('Save Blog')
+
+class CommentForm(FlaskForm):
+  comment = StringField('-',[validators.DataRequired()])
+  Submit=SubmitField('comment')

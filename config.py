@@ -4,6 +4,7 @@ class Config:
   '''
   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://emmanuel:lilfranken@localhost/blogpost'
   SECRET_KEY="VERYSECRET"
+  QUOTES_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
 class ProdConfig(Config):
   '''
   contains configuarations for production stage

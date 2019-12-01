@@ -30,3 +30,15 @@ class Blog(db.Model):
   blog= db.Column(db.String(2000))
   blog_image=db.column(db.String(255))
   writter_id=db.Column(db.Integer, db.ForeignKey('writters.id'))
+
+class Comment(db.Model):
+  __tablename__='comments'
+  id=db.Column(db.Integer, primary_key=True)
+  comment=db.Column(db.String(255))
+  blog_id=db.Column(db.Integer, db.ForeignKey('blogs.id'))
+  writter_id = db.Column(db.Integer, db.ForeignKey('writters.id'))
+
+class Quotes:
+  def __init__(self,author,randomquote):
+    self.author = author
+    self.quote = randomquote
