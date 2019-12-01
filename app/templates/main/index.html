@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h4>Welcome To Blog Post</h4>
+  <div style="border:10px solid maroon; padding:20px; border-radius: 20px; width: 40%;" id="crd">
+      <p style="color: black;">{{quotes.quote}}</p>
+      <p style="color: black; float: right;"> by:{{quotes.author}}</p>
+    </div>
 {% endblock %}

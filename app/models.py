@@ -39,6 +39,6 @@ class Comment(db.Model):
   writter_id = db.Column(db.Integer, db.ForeignKey('writters.id'))
 
 class Quotes:
-  def __init__(self,author,randomquote):
+  def __init__(self,author,quote):
     self.author = author
-    self.quote = randomquote
+    self.quote = quote

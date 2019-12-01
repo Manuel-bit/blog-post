@@ -2,12 +2,15 @@ from flask import render_template,redirect,url_for
 from . import main
 from .. import db
 from .forms import NewBlogForm,CommentForm
-from ..models import Blog,Comment
+from ..models import Blog,Comment,Quotes
 from flask_login import login_required,current_user 
+from app.request import GetQuotes
 
 @main.route('/')
 def index():
-  return render_template('main/index.html',title="Home")
+  quotes = GetQuotes()
+  print(quotes)
+  return render_template('main/index.html',title="Home",quotes=quotes)
 
 @main.route('/newblog', methods =["GET", "POST"])
 @login_required
@@ -33,4 +36,3 @@ def comment(id):
     return render_template('comment.html',pitch=pitch,form=form,commenst=comments)
   comments = Comment.query.filter_by(pitch_id=id).all()
   return render_template('comment.html',form=form,pitch=pitch,comments=comments)
-  

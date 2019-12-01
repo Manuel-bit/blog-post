@@ -11,9 +11,9 @@ def GetQuotes():
     get_quotes_data=url.read()
     quote_response=json.loads(get_quotes_data)
 
-    quote= None
+    quotes= None
     if quote_response:
       author=quote_response.get('author')
-      rendomquote=quote_response.get('quote')
-      quote=Quotes(author,randomquote)
-  return quote
+      quote=quote_response.get('quote')
+      quotes=Quotes(author,quote)
+  return quotes
