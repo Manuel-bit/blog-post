@@ -3,6 +3,7 @@ class Config:
   contains configuarations for all stages of the application
   '''
   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://emmanuel:lilfranken@localhost/blogpost'
+  SECRET_KEY="VERYSECRET"
 class ProdConfig(Config):
   '''
   contains configuarations for production stage

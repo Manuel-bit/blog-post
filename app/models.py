@@ -1,7 +1,8 @@
 from . import db
+from werkzeug.security import generate_password_hash,check_password_hash
 
 class Writter(db.Model):
-  __tablename__ = 'wsers'
+  __tablename__ = 'writters'
 
   id = db.Column(db.Integer, primary_key = True)
   username = db.Column(db.String(255))
