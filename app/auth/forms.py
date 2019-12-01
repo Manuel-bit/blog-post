@@ -17,3 +17,9 @@ class SignupForm(FlaskForm):
   def check_username(self,data_field):
     if User.query.filter_by(username = data_field).first():
       raise ValidationError('username taken, choose another username..')
+
+class LoginForm(FlaskForm):
+  username = StringField('username',[validators.DataRequired()])
+  password = PasswordField('Password',[validators.DataRequired()])
+  remember = BooleanField('remember me')
+  submit = SubmitField('Sign In')
