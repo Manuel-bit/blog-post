@@ -14,9 +14,19 @@ class Writter(db.Model,UserMixin):
   pass_secure = db.Column(db.String(255))
   bio= db.Column(db.String(255))
   profile_pic_path = db.Column(db.String())
+  blogs=db.relationship('Blog',backref = 'writter',lazy='dynamic')
   
   def password(self,password):
     self.pass_secure = generate_password_hash(password)
 
   def verify_password(self,password):
     return check_password_hash(self.pass_secure,password)
+
+class Blog(db.Model):
+  __tablename__='blogs'
+  id= db.Column(db.Integer,primary_key=True)
+  author=db.Column(db.String(255))
+  title=db.Column(db.String(255))
+  blog= db.Column(db.String(2000))
+  blog_image=db.column(db.String(255))
+  writter_id=db.Column(db.Integer, db.ForeignKey('writters.id'))

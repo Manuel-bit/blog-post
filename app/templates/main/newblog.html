@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{%block content%}
+  <div class="signup">
+    <div class="card" style="width: 40rem;">
+      {{wtf.quick_form(form)}}
+    </div>
+  </div>
+{%endblock%}
